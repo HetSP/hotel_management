@@ -9,15 +9,15 @@ class LoginPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Login/Sign Up',
-          style: TextStyle(color: Colors.white),
+          'Login or Signup',
+          style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold),
         ),
         backgroundColor: Colors.black87,
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          SizedBox(height: 40.0), // Adjust height as needed
+          SizedBox(height: 40.0), 
           Center(
             child: Column(
               children: [
@@ -94,13 +94,11 @@ class _LoginFormState extends State<LoginForm> {
                   TextSpan(
                     text: "Terms & Conditions",
                     style: TextStyle(color: Colors.blue),
-                    // Add your onTap callback if needed
                   ),
                   TextSpan(text: " and acknowledge the "),
                   TextSpan(
                     text: "Privacy Policy",
                     style: TextStyle(color: Colors.blue),
-                    // Add your onTap callback if needed
                   ),
                   TextSpan(text: "."),
                 ],
@@ -110,13 +108,12 @@ class _LoginFormState extends State<LoginForm> {
               height: 20,
             ),
             Container(
-              width: 350, // Set desired width
-              height: 50, // Set desired height
+              width: 350, 
+              height: 50, 
               child: ElevatedButton(
                 onPressed: () async {
                   if (_formKey.currentState!.validate()) {
                     final userBox = await Hive.openBox<User>('users');
-                    // Combine country code and phone number
                     final combinedPhoneNumber = _phoneNumber;
                     final user = User(combinedPhoneNumber);
                     userBox.add(user);
@@ -129,11 +126,11 @@ class _LoginFormState extends State<LoginForm> {
                   }
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: Colors.black87,
+                  backgroundColor: Colors.black87,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(
-                        10.0), // Set desired border radius
-                  ), // Set background color
+                        10.0), 
+                  ), 
                 ),
                 child: Text(
                   'Continue',

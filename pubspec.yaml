@@ -38,6 +38,7 @@ dependencies:
   intl_phone_number_input: ^0.7.4
   hive: ^2.2.3
   hive_flutter: ^1.1.0
+  flutter_date_pickers: ^0.4.2
 
 dev_dependencies:
   flutter_test:
